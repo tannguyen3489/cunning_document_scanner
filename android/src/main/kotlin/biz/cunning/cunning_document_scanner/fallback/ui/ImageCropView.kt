@@ -85,7 +85,7 @@ class ImageCropView(context: Context, attrs: AttributeSet) : AppCompatImageView(
      * @property imagePreviewMaxSizeInBytes if the photo is too big, we need to scale it down
      * before we display it
      */
-    private val imagePreviewMaxSizeInBytes = 100 * 1024 * 1024
+    private val imagePreviewMaxSizeInBytes = 1000 * 1024 * 1024
 
     init {
         // set cropper style
