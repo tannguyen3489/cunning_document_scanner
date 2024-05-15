@@ -23,10 +23,11 @@ fun Bitmap.saveToFile(file: File, quality: Int) {
  */
 fun Bitmap.changeByteCountByResizing(targetBytes: Int): Bitmap {
     val scale = sqrt(targetBytes.toDouble() / byteCount.toDouble())
+
     return Bitmap.createScaledBitmap(
         this,
         (width * scale).toInt(),
         (height * scale).toInt(),
-        true
+        false
     )
 }

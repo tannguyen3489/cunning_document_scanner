@@ -139,9 +139,9 @@ class ImageCropView(context: Context, attrs: AttributeSet) : AppCompatImageView(
     fun setImage(photo: Bitmap) {
         var previewImagePhoto = photo
         // if the image is too large, we need to scale it down before displaying it
-//        if (photo.byteCount > imagePreviewMaxSizeInBytes) {
-//            previewImagePhoto = photo.changeByteCountByResizing(imagePreviewMaxSizeInBytes)
-//        }
+        if (photo.byteCount > imagePreviewMaxSizeInBytes) {
+            previewImagePhoto = photo.changeByteCountByResizing(imagePreviewMaxSizeInBytes)
+        }
         this.setImageBitmap(previewImagePhoto)
         this.onSetImage()
     }
