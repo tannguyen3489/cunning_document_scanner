@@ -85,7 +85,7 @@ class ImageCropView(context: Context, attrs: AttributeSet) : AppCompatImageView(
      * @property imagePreviewMaxSizeInBytes if the photo is too big, we need to scale it down
      * before we display it
      */
-    private val imagePreviewMaxSizeInBytes = 1 * 1024 * 1024
+    private val imagePreviewMaxSizeInBytes = 10 * 1024 * 1024
 
     init {
         // set cropper style
@@ -139,9 +139,9 @@ class ImageCropView(context: Context, attrs: AttributeSet) : AppCompatImageView(
     fun setImage(photo: Bitmap) {
         var previewImagePhoto = photo
         // if the image is too large, we need to scale it down before displaying it
-        if (photo.byteCount > imagePreviewMaxSizeInBytes) {
-            previewImagePhoto = photo.changeByteCountByResizing(imagePreviewMaxSizeInBytes)
-        }
+//        if (photo.byteCount > imagePreviewMaxSizeInBytes) {
+//            previewImagePhoto = photo.changeByteCountByResizing(imagePreviewMaxSizeInBytes)
+//        }
         this.setImageBitmap(previewImagePhoto)
         this.onSetImage()
     }
